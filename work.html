@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+</head>
+<body>
+  <h2>Contact Form</h2>
+  <form id="myForm">
+    <label>Name:</label><br>
+    <input type="text" name="name" ><br><br>
+
+    <label>Email:</label><br>
+    <input type="text" name="email" ><br><br>
+
+    <label>Message:</label><br>
+    <input type="text" name="message" ><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+  
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+ 
+      const inputs = document.querySelectorAll('input[type="text"]');
+      
+     
+      for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.trim() === "") {
+          alert("Please fill in all required fields.");
+          event.preventDefault();
+          return;
+        }
+      }
+    });
+  </script>
+
+  
+</body>
+</html>
